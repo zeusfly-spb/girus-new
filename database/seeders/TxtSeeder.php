@@ -7,6 +7,7 @@ use App\Models\Admin;
 use App\Models\Txt;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class TxtSeeder extends Seeder
 {
@@ -17,14 +18,14 @@ class TxtSeeder extends Seeder
     {
         $texts = [
             [
-                'link' => 'my-services-form-headers-header5',
+                'link' => 'my-services-form-headers-header-' . Str::random(5),
                 'name_ru' => 'Цены, квоты и даты',
                 'name' => json_encode(['ru' => 'Цены, квоты и даты']),
                 'muser' => Admin::all()->random()->id,
                 'acmd_id' => Acmd::all()->random()->id,
             ],
             [
-                'link' => 'my-services-form-headers-header6',
+                'link' => 'my-services-form-headers-header-' . Str::random(5),
                 'name_ru' => 'Описание услуг',
                 'name' => json_encode(['ru' => 'Описание услуг']),
                 'muser' => Admin::all()->random()->id,
