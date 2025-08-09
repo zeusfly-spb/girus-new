@@ -34,6 +34,7 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             TourSeeder::class,
             CategoryTematicsSeeder::class,
+            A2ctSeeder::class,
         ]);
     }
 }
