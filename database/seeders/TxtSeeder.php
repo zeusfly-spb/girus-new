@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Acmd;
+use App\Models\Admin;
 use App\Models\Txt;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -18,15 +20,15 @@ class TxtSeeder extends Seeder
                 'link' => 'my-services-form-headers-header5',
                 'name_ru' => 'Цены, квоты и даты',
                 'name' => json_encode(['ru' => 'Цены, квоты и даты']),
-                'muser' => 1,
-                'acmd_id' => 6,
+                'muser' => Admin::all()->random()->id,
+                'acmd_id' => Acmd::all()->random()->id,
             ],
             [
                 'link' => 'my-services-form-headers-header6',
                 'name_ru' => 'Описание услуг',
                 'name' => json_encode(['ru' => 'Описание услуг']),
-                'muser' => 1,
-                'acmd_id' => 6,
+                'muser' => Admin::all()->random()->id,
+                'acmd_id' => Acmd::all()->random()->id,
             ],
         ];
 

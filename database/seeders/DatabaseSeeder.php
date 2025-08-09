@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
             FoodSeeder::class,
             DifficultySeeder::class,
             CollectionSeeder::class,
+            CategorySeeder::class,
         ]);
     }
 }
