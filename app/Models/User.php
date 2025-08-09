@@ -24,31 +24,46 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'name',
+        'id',
+        'type',
         'email',
-        'password',
+        'salt',
+        'passwd',
+        'ctime',
+        'ltime',
+        'mtime',
+        'ecount',
+        'status',
+        'name',
+        'phone',
+        'msg_user',
+        'msg_admin',
+        'msg_total',
+        'ord_count',
     ];
-
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var list<string>
-     */
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
     protected function casts(): array
     {
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'ctime' => 'datetime',
+            'ltime' => 'datetime',
+            'mtime' => 'datetime',
+            'status' => 'boolean',
         ];
+    }
+    public function seller()
+    {
+        return $this->hasOne(Seller::class);
+    }
+
+    public function partner()
+    {
+        return $this->hasOne(Partner::class);
     }
 }

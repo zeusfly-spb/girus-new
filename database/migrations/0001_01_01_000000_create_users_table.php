@@ -18,6 +18,18 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->string('type')->nullable();
+            $table->string('salt')->nullable();
+            $table->dateTime('ctime')->nullable();
+            $table->dateTime('ltime')->nullable();
+            $table->dateTime('mtime')->nullable();
+            $table->integer('ecount')->default(0);
+            $table->boolean('status')->default(true);
+            $table->string('phone')->nullable();
+            $table->integer('msg_user')->default(0);
+            $table->integer('msg_admin')->default(0);
+            $table->integer('msg_total')->default(0);
+            $table->integer('ord_count')->default(0);
             $table->timestamps();
         });
 
