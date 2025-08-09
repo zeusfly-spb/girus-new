@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             UserSeeder::class,
+            RegionSeeder::class,
             AcmdSeeder::class,
             ServiceSeeder::class,
             HotelSeeder::class,
@@ -23,10 +24,10 @@ class DatabaseSeeder extends Seeder
             StartSeeder::class,
             IdSeeder::class,
             SellerSeeder::class,
-            RegionSeeder::class,
             PartnerSeeder::class,
             AdminSeeder::class,
             TxtSeeder::class,
+            ActivitySeeder::class,
         ]);
     }
 }
