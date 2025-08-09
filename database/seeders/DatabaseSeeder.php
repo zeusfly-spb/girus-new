@@ -21,6 +21,8 @@ class DatabaseSeeder extends Seeder
             OfferSeeder::class,
             OfferDateSeeder::class,
             StartSeeder::class,
+            IdSeeder::class,
+            SellerSeeder::class,
         ]);
     }
 }
