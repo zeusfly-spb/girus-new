@@ -35,6 +35,10 @@ class DatabaseSeeder extends Seeder
             TourSeeder::class,
             CategoryTematicsSeeder::class,
             A2ctSeeder::class,
+            ActivityTourSeeder::class,
+            OrdSeeder::class,
+            OrdMsgSeeder::class,
+            ServiceDateSeeder::class,
         ]);
     }
 }
