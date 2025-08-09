@@ -25,6 +25,8 @@ class DatabaseSeeder extends Seeder
             SellerSeeder::class,
             RegionSeeder::class,
             PartnerSeeder::class,
+            AdminSeeder::class,
+            TxtSeeder::class,
         ]);
     }
 }
