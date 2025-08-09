@@ -11,18 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tours', function (Blueprint $table) {
+        Schema::create('category_tematics', function (Blueprint $table) {
             $table->id();
             $table->string('name_ru');
             $table->text('name');
-            $table->unsignedBigInteger('offer_id')->nullable();
-            $table->unsignedBigInteger('region_id')->nullable();
-            $table->unsignedBigInteger('partner_id')->nullable();
-            $table->unsignedBigInteger('category_tematics_id')->nullable();
             $table->text('description')->nullable();
-            $table->date('start_date')->nullable();
-            $table->date('end_date')->nullable();
-            $table->decimal('price', 8, 2)->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tours');
+        Schema::dropIfExists('category_tematics');
     }
 };

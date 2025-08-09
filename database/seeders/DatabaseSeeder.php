@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
             CollectionSeeder::class,
             CategorySeeder::class,
             TourSeeder::class,
+            CategoryTematicsSeeder::class,
         ]);
     }
 }
