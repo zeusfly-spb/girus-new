@@ -6,17 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
- * @method static updateOrCreate(array $array, array $hotel)
+ * @method static updateOrCreate(array $array, array $star)
  */
-class Hotel extends Model
+class Star extends Model
 {
     protected $guarded = [];
     protected $casts = [
         'name' => 'array',
+        'acmd_id' => 'integer',
     ];
 
-    public function region(): BelongsTo
+    public function acmd(): BelongsTo
     {
-        return $this->belongsTo(Region::class, 'region_id');
+        return $this->belongsTo(Acmd::class);
     }
 }
