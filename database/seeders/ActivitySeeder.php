@@ -15,39 +15,8 @@ class ActivitySeeder extends Seeder
      */
     public function run(): void
     {
-        $offers = Offer::all();
-        $regions = Region::all();
-        $offer_id = $offers->random()->id;
-        $region_id = $regions->random()->id;
-        /**
-        $activities = [
-            [
-                'name_ru' => 'Речной круиз по Волге',
-                'name' => json_encode(['ru' => 'Речной круиз по Волге']),
-                'offer_id' => $offer_id,
-                'region_id' => $region_id,
-                'info' => 'Многодневный круиз по реке Волге с посещением исторических городов.',
-                'start_date' => '2025-09-01',
-                'end_date' => '2025-09-07',
-            ],
-            [
-                'name_ru' => 'Горнолыжный тур на Урале',
-                'name' => json_encode(['ru' => 'Горнолыжный тур на Урале']),
-                'offer_id' => $offer_id,
-                'region_id' => $region_id,
-                'info' => 'Активный отдых на горнолыжных курортах Урала.',
-                'start_date' => '2025-12-15',
-                'end_date' => '2025-12-22',
-            ],
-        ];
-
-        foreach ($activities as $activity) {
-            Activity::updateOrCreate(
-                ['name_ru' => $activity['name_ru'], 'offer_id' => $activity['offer_id']],
-                $activity
-            );
-        }
-        **/
+        $offer_id = Offer::all()->random()->id;
+        $region_id = Region::all()->random()->id;
         $activities = [
             [
                 'name_ru' => 'Речной круиз по Волге',
