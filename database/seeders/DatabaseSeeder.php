@@ -28,6 +28,8 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             TxtSeeder::class,
             ActivitySeeder::class,
+            FoodSeeder::class,
+            DifficultySeeder::class,
         ]);
     }
 }
