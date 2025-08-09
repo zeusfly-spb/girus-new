@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
             ActivitySeeder::class,
             FoodSeeder::class,
             DifficultySeeder::class,
+            CollectionSeeder::class,
         ]);
     }
 }

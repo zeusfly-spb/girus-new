@@ -15,7 +15,6 @@ class TxtSeeder extends Seeder
     {
         $texts = [
             [
-                'id' => 150,
                 'link' => 'my-services-form-headers-header5',
                 'name_ru' => 'Цены, квоты и даты',
                 'name' => json_encode(['ru' => 'Цены, квоты и даты']),
