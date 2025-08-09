@@ -23,6 +23,8 @@ class DatabaseSeeder extends Seeder
             StartSeeder::class,
             IdSeeder::class,
             SellerSeeder::class,
+            RegionSeeder::class,
+            PartnerSeeder::class,
         ]);
     }
 }

@@ -38,7 +38,6 @@ class SellerSeeder extends Seeder
                 'msg_admin' => 0,
                 'msg_total' => 0,
                 'ord_count' => 0,
-                'user_id' => $user_id
             ]);
             Seller::create([
                 'id' => $id,
