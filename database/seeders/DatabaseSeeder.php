@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
             DifficultySeeder::class,
             CollectionSeeder::class,
             CategorySeeder::class,
+            TourSeeder::class,
         ]);
     }
 }

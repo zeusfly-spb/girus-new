@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('tours', function (Blueprint $table) {
             $table->id();
+            $table->string('name_ru');
+            $table->text('name');
+            $table->unsignedBigInteger('offer_id')->nullable();
+            $table->unsignedBigInteger('region_id')->nullable();
+            $table->unsignedBigInteger('partner_id')->nullable();
+            $table->text('description')->nullable();
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
+            $table->decimal('price', 8, 2)->nullable();
             $table->timestamps();
         });
     }
