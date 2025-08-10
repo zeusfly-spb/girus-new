@@ -16,11 +16,12 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         if (!User::where('email', 'admin@girus.ru')->exists()) {
-            User::create([
+            $admin = User::create([
                 'email' => 'admin@girus.ru',
                 'name' => 'Admin',
                 'password' => bcrypt('secret'),
             ]);
+            $admin->assignRole('admin');
         }
         if (!User::where('email', 'test@localhost.ru')->exists()) {
             $salt = md5(now());

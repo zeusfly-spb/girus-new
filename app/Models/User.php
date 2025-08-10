@@ -3,10 +3,13 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 
 /**
  * @method static find(int|string|null $id)
@@ -16,32 +19,9 @@ use Laravel\Sanctum\HasApiTokens;
  */
 class User extends Authenticatable
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable, HasApiTokens;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
-     */
-    protected $fillable = [
-        'id',
-        'type',
-        'email',
-        'salt',
-        'passwd',
-        'ctime',
-        'ltime',
-        'mtime',
-        'ecount',
-        'status',
-        'name',
-        'phone',
-        'msg_user',
-        'msg_admin',
-        'msg_total',
-        'ord_count',
-    ];
+    /** @use HasFactory<UserFactory> */
+    use HasFactory, Notifiable, HasApiTokens, hasRoles;
+    protected $guarded = [];
     protected $hidden = [
         'password',
         'remember_token',
@@ -58,12 +38,12 @@ class User extends Authenticatable
             'status' => 'boolean',
         ];
     }
-    public function seller()
+    public function seller(): HasOne
     {
         return $this->hasOne(Seller::class);
     }
 
-    public function partner()
+    public function partner(): HasOne
     {
         return $this->hasOne(Partner::class);
     }
