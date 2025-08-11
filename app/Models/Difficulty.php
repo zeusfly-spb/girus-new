@@ -23,4 +23,7 @@ use Illuminate\Database\Eloquent\Model;
 class Difficulty extends Model
 {
     protected $guarded = [];
+    protected $casts = [
+      'name' => 'array'
+    ];
 }

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tours', function (Blueprint $table) {
             $table->id();
             $table->string('name_ru');
-            $table->text('name');
+            $table->json('name');
             $table->unsignedBigInteger('offer_id')->nullable();
             $table->unsignedBigInteger('region_id')->nullable();
             $table->unsignedBigInteger('partner_id')->nullable();

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('acmds', function (Blueprint $table) {
             $table->id();
             $table->string('name_ru', 256);
-            $table->text('name');
+            $table->json('name');
             $table->timestamps();
         });
     }

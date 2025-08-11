@@ -28,7 +28,6 @@ class Service extends Model
 {
     protected $guarded = [];
     protected $casts = [
-        'type' => 'string',
         'name' => 'array',
     ];
 

@@ -19,7 +19,7 @@ class TourSeeder extends Seeder
         $tours = [
             [
                 'name_ru' => 'Круиз по Волге',
-                'name' => json_encode(['ru' => 'Круиз по Волге']),
+                'name' => ['ru' => 'Круиз по Волге'],
                 'offer_id' => Offer::all()->random()->id,
                 'region_id' => Region::all()->random()->id,
                 'partner_id' => Partner::all()->random()->id,
@@ -30,7 +30,7 @@ class TourSeeder extends Seeder
             ],
             [
                 'name_ru' => 'Горнолыжный тур на Урале',
-                'name' => json_encode(['ru' => 'Горнолыжный тур на Урале']),
+                'name' => ['ru' => 'Горнолыжный тур на Урале'],
                 'offer_id' => Offer::all()->random()->id,
                 'region_id' => Region::all()->random()->id,
                 'partner_id' => Partner::all()->random()->id,

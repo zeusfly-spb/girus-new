@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             CurrencySeeder::class,
             DifficultySeeder::class,
             FoodSeeder::class,
+            UserTypeSeeder::class,
             UserSeeder::class,
             CountrySeeder::class,
             RegionSeeder::class,

@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('a2cts', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('acmd_id');
+            $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('activity_id');
-            $table->unique(['acmd_id', 'activity_id']);
+            $table->unique(['category_id', 'activity_id']);
             $table->timestamps();
         });
     }

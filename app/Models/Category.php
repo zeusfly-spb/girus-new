@@ -44,4 +44,9 @@ class Category extends Model
     {
         return $this->belongsToMany(Tematics::class);
     }
+
+    public function activities(): BelongsToMany
+    {
+        return $this->belongsToMany(Activity::class,'a2cts');
+    }
 }

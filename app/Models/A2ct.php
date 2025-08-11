@@ -26,9 +26,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class A2ct extends Model
 {
     protected $guarded = [];
-    public function acmd(): BelongsTo
+    public function category(): BelongsTo
     {
-        return $this->belongsTo(Acmd::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function activity(): BelongsTo

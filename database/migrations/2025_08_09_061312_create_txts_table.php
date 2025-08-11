@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('link', 256)->unique();
             $table->string('name_ru', 256);
-            $table->text('name');
+            $table->json('name');
             $table->unsignedBigInteger('muser');
             $table->unsignedBigInteger('acmd_id')->nullable();
             $table->timestamps();

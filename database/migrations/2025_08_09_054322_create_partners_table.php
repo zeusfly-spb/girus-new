@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('partners', function (Blueprint $table) {
             $table->id();
             $table->string('name_ru', 256);
-            $table->text('name');
+            $table->json('name');
             $table->unsignedBigInteger('region_id')->nullable();
             $table->text('contact_info')->nullable();
             $table->text('description')->nullable();

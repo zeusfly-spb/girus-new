@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\UserType;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -26,7 +27,7 @@ class UserSeeder extends Seeder
         if (!User::where('email', 'test@localhost.ru')->exists()) {
             $salt = md5(now());
             User::create([
-                'type' => 'seller',
+                'user_type_id' => UserType::whereName('seller')->first()->id,
                 'email' => 'test@localhost.ru',
                 'salt' => $salt,
                 'password' => bcrypt('test1234567'),
@@ -50,7 +51,7 @@ class UserSeeder extends Seeder
         if (!User::where('email', 'test1@localhost.ru')->exists()) {
             $salt = md5(now());
             User::create([
-                'type' => 'partner',
+                'user_type_id' => UserType::whereName('partner')->first()->id,
                 'email' => 'test1@localhost.ru',
                 'salt' => $salt,
                 'password' => bcrypt('test1234567'),
@@ -73,7 +74,7 @@ class UserSeeder extends Seeder
         if (!User::where('email', 'test2@localhost.ru')->exists()) {
             $salt = md5(now());
             User::create([
-                'type' => 'client',
+                'user_type_id' => UserType::whereName('client')->first()->id,
                 'email' => 'test2@localhost.ru',
                 'salt' => $salt,
                 'password' => bcrypt('test1234567'),

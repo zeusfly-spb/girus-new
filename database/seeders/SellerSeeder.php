@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Id;
 use App\Models\Seller;
 use App\Models\User;
+use App\Models\UserType;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -23,7 +24,7 @@ class SellerSeeder extends Seeder
         if (!User::where('email', 'test-seller@localhost.ru')->exists()) {
             $user_id = $users->random()->id;
             User::create([
-                'type' => 'seller',
+                'user_type_id' => UserType::whereName('seller')->first()->id,
                 'email' => 'test-seller@localhost.ru',
                 'salt' => $salt,
                 'password' => bcrypt('test1234567'),

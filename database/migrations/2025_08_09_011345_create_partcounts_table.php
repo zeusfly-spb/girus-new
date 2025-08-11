@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('partcounts', function (Blueprint $table) {
             $table->id();
             $table->string('name_ru', 256)->unique();
-            $table->text('name');
+            $table->json('name');
             $table->set('service_type', ['tour', 'excursion']);
             $table->index(['id', 'service_type']);
         });

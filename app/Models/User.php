@@ -7,6 +7,7 @@ use Database\Factories\UserFactory;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\DatabaseNotification;
@@ -90,6 +91,7 @@ class User extends Authenticatable
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable, HasApiTokens, hasRoles;
     protected $guarded = [];
+    protected $appends = ['type'];
     protected $hidden = [
         'password',
         'remember_token',
@@ -114,5 +116,15 @@ class User extends Authenticatable
     public function partner(): HasOne
     {
         return $this->hasOne(Partner::class);
+    }
+
+    public function user_type(): BelongsTo
+    {
+        return $this->belongsTo(UserType::class);
+    }
+
+    public function getTypeAttribute()
+    {
+        return $this->user_type->name;
     }
 }

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('name_ru');
-            $table->text('name');
+            $table->json('name');
             $table->unsignedBigInteger('service_id');
             $table->timestamps();
         });

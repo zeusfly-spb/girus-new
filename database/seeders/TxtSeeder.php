@@ -20,14 +20,14 @@ class TxtSeeder extends Seeder
             [
                 'link' => 'my-services-form-headers-header-' . Str::random(5),
                 'name_ru' => 'Цены, квоты и даты',
-                'name' => json_encode(['ru' => 'Цены, квоты и даты']),
+                'name' => ['ru' => 'Цены, квоты и даты'],
                 'muser' => Admin::all()->random()->id,
                 'acmd_id' => Acmd::all()->random()->id,
             ],
             [
                 'link' => 'my-services-form-headers-header-' . Str::random(5),
                 'name_ru' => 'Описание услуг',
-                'name' => json_encode(['ru' => 'Описание услуг']),
+                'name' => ['ru' => 'Описание услуг'],
                 'muser' => Admin::all()->random()->id,
                 'acmd_id' => Acmd::all()->random()->id,
             ],

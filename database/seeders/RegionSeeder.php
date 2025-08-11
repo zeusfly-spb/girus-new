@@ -30,7 +30,7 @@ class RegionSeeder extends Seeder
                 [
                     'name_ru' => $region['name_ru'],
                     'link' => $region['link'],
-                    'name' => json_encode(['ru' => $region['name_ru']]),
+                    'name' => ['ru' => $region['name_ru']],
                 ]
             );
         }

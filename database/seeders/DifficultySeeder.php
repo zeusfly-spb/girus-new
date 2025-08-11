@@ -16,19 +16,19 @@ class DifficultySeeder extends Seeder
         $difficulties = [
             [
                 'name_ru' => 'Базовый (без физ.нагрузки)',
-                'name' => json_encode(['ru' => 'Базовый (без физ.нагрузки)']),
+                'name' => ['ru' => 'Базовый (без физ.нагрузки)'],
             ],
             [
                 'name_ru' => 'Средний',
-                'name' => json_encode(['ru' => 'Средний']),
+                'name' => ['ru' => 'Средний'],
             ],
             [
                 'name_ru' => 'Продвинутый',
-                'name' => json_encode(['ru' => 'Продвинутый']),
+                'name' => ['ru' => 'Продвинутый'],
             ],
             [
                 'name_ru' => 'Сложный',
-                'name' => json_encode(['ru' => 'Сложный']),
+                'name' => ['ru' => 'Сложный'],
             ],
         ];
 
