@@ -16,9 +16,6 @@ return new class extends Migration
             $table->string('name', 256);
             $table->string('email', 256)->unique();
             $table->string('password', 256);
-            $table->string('role')->nullable(); // e.g., 'superadmin', 'editor'
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('remember_token')->nullable();
             $table->timestamps();
         });
     }

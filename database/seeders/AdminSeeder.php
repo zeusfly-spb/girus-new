@@ -15,16 +15,14 @@ class AdminSeeder extends Seeder
     {
         $admins = [
             [
-                'name' => 'Super Admin',
-                'email' => 'superadmin@example.com',
-                'password' => bcrypt('password123'),
-                'role' => 'superadmin',
+                'name' => 'Admin',
+                'email' => 'admin@girus.ru',
+                'password' => bcrypt('secret'),
             ],
             [
-                'name' => 'Content Editor',
-                'email' => 'editor@example.com',
-                'password' => bcrypt('password123'),
-                'role' => 'editor',
+                'name' => 'Editor',
+                'email' => 'editor@girus.ru',
+                'password' => bcrypt('secret'),
             ],
         ];
         foreach ($admins as $admin) {
