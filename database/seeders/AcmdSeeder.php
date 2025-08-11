@@ -15,14 +15,30 @@ class AcmdSeeder extends Seeder
     {
         $acmdData = [
             [
-                'id' => 6,
+                'name_ru' => 'Гостиницы, отели',
+                'name' => json_encode(['ru' => 'Гостиницы, отели']),
+            ],
+            [
+                'name_ru' => 'База отдыха, турбаза, гостевой дом',
+                'name' => json_encode(['ru' => 'База отдыха, турбаза, гостевой дом']),
+            ],
+            [
+                'name_ru' => 'Палатка',
+                'name' => json_encode(['ru' => 'Палатка']),
+            ],
+            [
+                'name_ru' => 'Каюта',
+                'name' => json_encode(['ru' => 'Каюта']),
+            ],
+            [
+                'name_ru' => 'Без проживания',
+                'name' => json_encode(['ru' => 'Без проживания']),
+            ],
+            [
                 'name_ru' => 'Санатории и дома отдыха',
                 'name' => json_encode(['ru' => 'Санатории и дома отдыха']),
             ],
-            [
-                'name_ru' => 'Гостиницы',
-                'name' => json_encode(['ru' => 'Гостиницы']),
-            ],
+
         ];
 
         foreach ($acmdData as $acmd) {

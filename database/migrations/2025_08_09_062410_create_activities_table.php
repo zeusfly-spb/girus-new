@@ -13,15 +13,8 @@ return new class extends Migration
     {
         Schema::create('activities', function (Blueprint $table) {
             $table->id();
-            $table->string('link')->unique()->nullable();
             $table->string('name_ru');
             $table->string('name');
-            $table->unsignedBigInteger('region_id')->nullable();
-            $table->unsignedBigInteger('offer_id')->nullable();
-            $table->text('info')->nullable();
-            $table->string('description')->nullable();
-            $table->date('start_date')->nullable();
-            $table->date('end_date')->nullable();
             $table->timestamps();
         });
     }

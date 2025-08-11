@@ -17,14 +17,4 @@ class Activity extends Model
         'start_date' => 'date',
         'end_date' => 'date',
     ];
-
-    public function offer(): BelongsTo
-    {
-        return $this->belongsTo(Offer::class);
-    }
-
-    public function region(): BelongsTo
-    {
-        return $this->belongsTo(Region::class);
-    }
 }
