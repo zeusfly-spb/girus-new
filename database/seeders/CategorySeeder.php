@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
+use App\Models\Service;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -17,17 +18,17 @@ class CategorySeeder extends Seeder
             [
                 'name_ru' => 'Приключения',
                 'name' => json_encode(['ru' => 'Приключения']),
-                'description' => 'Категория для активных туров с элементами приключений.',
+                'service_id' => Service::all()->random()->id,
             ],
             [
                 'name_ru' => 'Отдых',
                 'name' => json_encode(['ru' => 'Отдых']),
-                'description' => 'Категория для релаксационных туров и отдыха.',
+                'service_id' => Service::all()->random()->id,
             ],
             [
                 'name_ru' => 'Культурные',
                 'name' => json_encode(['ru' => 'Культурные']),
-                'description' => 'Категория для туров, ориентированных на культурные достопримечательности.',
+                'service_id' => Service::all()->random()->id,
             ],
         ];
 
