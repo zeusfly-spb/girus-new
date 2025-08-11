@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('collections', function (Blueprint $table) {
             $table->id();
             $table->string('name_ru');
+            $table->text('name');
             $table->boolean('top')->default(false);
             $table->string('img')->nullable();
-            $table->string('link');
+            $table->string('link')->nullable();
             $table->timestamps();
         });
     }

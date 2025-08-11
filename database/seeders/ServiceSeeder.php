@@ -15,13 +15,13 @@ class ServiceSeeder extends Seeder
     {
         $services = [
             [
-                'type' => 'sanatorium',
-                'name' => json_encode(['ru' => 'Санаторий Здоровье']),
+                'type' => 'tour',
+                'name' => json_encode(['ru' => 'Тур']),
                 'acmd_id' => 6,
             ],
             [
-                'type' => 'hotel',
-                'name' => json_encode(['ru' => 'Гостиница Комфорт']),
+                'type' => 'excursion',
+                'name' => json_encode(['ru' => 'Экскурсия']),
                 'acmd_id' => 6,
             ],
         ];

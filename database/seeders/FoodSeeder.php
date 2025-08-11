@@ -16,30 +16,63 @@ class FoodSeeder extends Seeder
      */
     public function run(): void
     {
-        $offer_id = Offer::all()->random()->id;
-        $hotel_id = Hotel::all()->random()->id;
         $foods = [
             [
-                'name_ru' => 'Завтрак "Шведский стол"',
-                'name' => json_encode(['ru' => 'Завтрак "Шведский стол"']),
-                'hotel_id' => Hotel::all()->random()->id,
-                'offer_id' => Offer::all()->random()->id,
-                'description' => 'Разнообразный шведский стол с местными продуктами и свежими напитками.',
-                'type' => 'breakfast',
+                'code' => 'Без',
+                'name_ru' => 'без питания"',
+                'name' => json_encode(['ru' => 'без питания']),
+            ],
+
+            [
+                'code' => 'All',
+                'name_ru' => 'все включено',
+                'name' => json_encode(['ru' => 'все включено']),
+            ],
+
+            [
+                'code' => 'BB',
+                'name_ru' => 'завтраки',
+                'name' => json_encode(['ru' => 'завтраки']),
+            ],
+
+            [
+                'code' => 'HB',
+                'name_ru' => 'завтраки и ужины',
+                'name' => json_encode(['ru' => 'завтраки и ужины']),
+            ],
+
+            [
+                'code' => 'FB',
+                'name_ru' => 'завтраки, обеды и ужины',
+                'name' => json_encode(['ru' => 'завтраки, обеды и ужины']),
+            ],
+
+            [
+                'code' => 'UAI',
+                'name_ru' => 'ультра все включено',
+                'name' => json_encode(['ru' => 'ультра все включено']),
+            ],
+
+            [
+                'code' => 'обед',
+                'name_ru' => 'обед',
+                'name' => json_encode(['ru' => 'обед']),
             ],
             [
-                'name_ru' => 'Полный пансион',
-                'name' => json_encode(['ru' => 'Полный пансион']),
-                'hotel_id' => Hotel::all()->random()->id,
-                'offer_id' => Offer::all()->random()->id,
-                'description' => 'Трехразовое питание с акцентом на уральскую кухню.',
-                'type' => 'full_board',
+                'code' => 'ужин',
+                'name_ru' => 'ужин',
+                'name' => json_encode(['ru' => 'ужин']),
+            ],
+            [
+                'code' => 'Br+L',
+                'name_ru' => 'завтраки и обеды',
+                'name' => json_encode(['ru' => 'завтраки и обеды']),
             ],
         ];
 
         foreach ($foods as $food) {
             Food::updateOrCreate(
-                ['name_ru' => $food['name_ru'], 'hotel_id' => $food['hotel_id']],
+                ['code' => $food['code']],
                 $food
             );
         }

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name_ru');
             $table->text('name');
-            $table->text('description')->nullable();
+            $table->unsignedBigInteger('service_id');
             $table->timestamps();
         });
     }

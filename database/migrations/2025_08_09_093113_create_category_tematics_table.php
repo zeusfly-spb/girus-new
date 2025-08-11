@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('category_tematics', function (Blueprint $table) {
             $table->id();
-            $table->string('name_ru');
-            $table->text('name');
-            $table->text('description')->nullable();
+            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('tematics_id');
             $table->timestamps();
         });
     }

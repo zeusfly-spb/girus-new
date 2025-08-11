@@ -15,16 +15,56 @@ class CollectionSeeder extends Seeder
     {
         $collections = [
             [
-                'name_ru' => 'Популярные туры',
-                'top' => 1,
-                'img' => 'popular.jpg',
-                'link' => 'popularnye-tury',
+                'name_ru' => 'Новый год и Рождество',
+                'name' => json_encode(['ru' => 'Новый год и Рождество']),
             ],
             [
-                'name_ru' => 'Санатории',
-                'top' => 0,
-                'img' => 'sanatorii.jpg',
-                'link' => 'sanatorii',
+                'name_ru' => 'Майские праздники',
+                'name' => json_encode(['ru' => 'Майские праздники']),
+            ],
+            [
+                'name_ru' => 'Ноябрьские праздники',
+                'name' => json_encode(['ru' => 'Ноябрьские праздники']),
+            ],
+            [
+                'name_ru' => '8 марта',
+                'name' => json_encode(['ru' => '8 марта']),
+            ],
+            [
+                'name_ru' => '23 февраля',
+                'name' => json_encode(['ru' => '23 февраля']),
+            ],
+            [
+                'name_ru' => 'Пасха',
+                'name' => json_encode(['ru' => 'Пасха']),
+            ],
+            [
+                'name_ru' => 'Июньские праздники',
+                'name' => json_encode(['ru' => 'Июньские праздники']),
+            ],
+            [
+                'name_ru' => 'Масленица',
+                'name' => json_encode(['ru' => 'Масленица']),
+            ],
+            [
+                'name_ru' => '14 февраля',
+                'name' => json_encode(['ru' => '14 февраля']),
+            ],
+            [
+                'name_ru' => 'Охота и рыбалка',
+                'name' => json_encode(['ru' => 'Охота и рыбалка']),
+            ],
+            [
+                'name_ru' => 'Усадьбы, замки, дворцы',
+                'name' => json_encode(['ru' => 'Усадьбы, замки, дворцы']),
+            ],
+            [
+                'name_ru' => 'Авторские туры',
+                'name' => json_encode(['ru' => 'Авторские туры']),
+            ],
+            [
+                'name_ru' => 'Музеи и искусство',
+                'name' => json_encode(['ru' => 'Музеи и искусство']),
             ],
         ];
 

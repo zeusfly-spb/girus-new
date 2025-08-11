@@ -15,8 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('name_ru');
             $table->text('name');
-            $table->integer('level');
-            $table->text('description')->nullable();
             $table->timestamps();
         });
     }

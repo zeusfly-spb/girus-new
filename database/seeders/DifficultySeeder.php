@@ -15,28 +15,26 @@ class DifficultySeeder extends Seeder
     {
         $difficulties = [
             [
-                'name_ru' => 'Легкий',
-                'name' => json_encode(['ru' => 'Легкий']),
-                'level' => 1,
-                'description' => 'Подходит для новичков и семей с детьми.',
+                'name_ru' => 'Базовый (без физ.нагрузки)',
+                'name' => json_encode(['ru' => 'Базовый (без физ.нагрузки)']),
             ],
             [
                 'name_ru' => 'Средний',
                 'name' => json_encode(['ru' => 'Средний']),
-                'level' => 2,
-                'description' => 'Требует базовой физической подготовки.',
+            ],
+            [
+                'name_ru' => 'Продвинутый',
+                'name' => json_encode(['ru' => 'Продвинутый']),
             ],
             [
                 'name_ru' => 'Сложный',
                 'name' => json_encode(['ru' => 'Сложный']),
-                'level' => 3,
-                'description' => 'Для опытных туристов с высокой выносливостью.',
             ],
         ];
 
         foreach ($difficulties as $difficulty) {
             Difficulty::updateOrCreate(
-                ['level' => $difficulty['level']],
+                ['name_ru' => $difficulty['name_ru']],
                 $difficulty
             );
         }

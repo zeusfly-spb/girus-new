@@ -15,27 +15,113 @@ class CategoryTematicsSeeder extends Seeder
     {
         $categories = [
             [
-                'name_ru' => 'Приключенческий туризм',
-                'name' => json_encode(['ru' => 'Приключенческий туризм']),
-                'description' => 'Туры, включающие активные виды отдыха, такие как походы, сплавы и альпинизм.',
+                'category_id' => '1',
+                'tematics_id' => '6',
             ],
             [
-                'name_ru' => 'Культурный туризм',
-                'name' => json_encode(['ru' => 'Культурный туризм']),
-                'description' => 'Туры, ориентированные на посещение исторических и культурных достопримечательностей.',
+                'category_id' => '1',
+                'tematics_id' => '7',
             ],
             [
-                'name_ru' => 'Оздоровительный туризм',
-                'name' => json_encode(['ru' => 'Оздоровительный туризм']),
-                'description' => 'Туры с акцентом на санаторно-курортное лечение и велнес.',
+                'category_id' => '1',
+                'tematics_id' => '8',
+            ],
+            [
+                'category_id' => '1',
+                'tematics_id' => '17',
+            ],
+            [
+                'category_id' => '1',
+                'tematics_id' => '18',
+            ],
+            [
+                'category_id' => '1',
+                'tematics_id' => '19',
+            ],
+            [
+                'category_id' => '1',
+                'tematics_id' => '20',
+            ],
+            [
+                'category_id' => '1',
+                'tematics_id' => '21',
+            ],
+            [
+                'category_id' => '1',
+                'tematics_id' => '22',
+            ],
+            [
+                'category_id' => '2',
+                'tematics_id' => '1',
+            ],
+            [
+                'category_id' => '2',
+                'tematics_id' => '2',
+            ],
+            [
+                'category_id' => '2',
+                'tematics_id' => '3',
+            ],
+            [
+                'category_id' => '2',
+                'tematics_id' => '4',
+            ],
+            [
+                'category_id' => '2',
+                'tematics_id' => '5',
+            ],
+            [
+                'category_id' => '2',
+                'tematics_id' => '6',
+            ],
+            [
+                'category_id' => '2',
+                'tematics_id' => '7',
+            ],
+            [
+                'category_id' => '2',
+                'tematics_id' => '8',
+            ],
+            [
+                'category_id' => '2',
+                'tematics_id' => '9',
+            ],
+            [
+                'category_id' => '2',
+                'tematics_id' => '10',
+            ],
+            [
+                'category_id' => '2',
+                'tematics_id' => '11',
+            ],
+            [
+                'category_id' => '2',
+                'tematics_id' => '12',
+            ],
+            [
+                'category_id' => '2',
+                'tematics_id' => '13',
+            ],
+            [
+                'category_id' => '2',
+                'tematics_id' => '14',
+            ],
+            [
+                'category_id' => '2',
+                'tematics_id' => '15',
+            ],
+            [
+                'category_id' => '2',
+                'tematics_id' => '16',
+            ],
+            [
+                'category_id' => '1',
+                'tematics_id' => '6',
             ],
         ];
 
         foreach ($categories as $category) {
-            CategoryTematics::updateOrCreate(
-                ['name_ru' => $category['name_ru']],
-                $category
-            );
+            CategoryTematics::updateOrCreate(['category_id' => $category['category_id'], 'tematics_id' => $category['tematics_id']], $category);
         }
     }
 }
