@@ -43,15 +43,19 @@ use Spatie\Permission\Traits\HasRoles;
  * @property Carbon|null $updated_at
  * @property-read DatabaseNotificationCollection<int, DatabaseNotification> $notifications
  * @property-read int|null $notifications_count
- * @property-read Partner|null $partner
+ * @property-read bool|null $notifications_exists
+ * @property-read \App\Models\Partner|null $partner
  * @property-read Collection<int, Permission> $permissions
  * @property-read int|null $permissions_count
+ * @property-read bool|null $permissions_exists
  * @property-read Collection<int, Role> $roles
  * @property-read int|null $roles_count
- * @property-read Seller|null $seller
+ * @property-read bool|null $roles_exists
+ * @property-read \App\Models\Seller|null $seller
  * @property-read Collection<int, PersonalAccessToken> $tokens
  * @property-read int|null $tokens_count
- * @method static UserFactory factory($count = null, $state = [])
+ * @property-read bool|null $tokens_exists
+ * @method static \Database\Factories\UserFactory factory($count = null, $state = [])
  * @method static Builder<static>|User newModelQuery()
  * @method static Builder<static>|User newQuery()
  * @method static Builder<static>|User permission($permissions, $without = false)

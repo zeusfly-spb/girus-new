@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Category> $categories
  * @property-read int|null $categories_count
+ * @property-read bool|null $categories_exists
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Tematics newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Tematics newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Tematics query()

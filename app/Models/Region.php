@@ -16,10 +16,13 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property string|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Hotel> $hotels
  * @property-read int|null $hotels_count
+ * @property-read bool|null $hotels_exists
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Partner> $partners
  * @property-read int|null $partners_count
+ * @property-read bool|null $partners_exists
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Target> $targets
  * @property-read int|null $targets_count
+ * @property-read bool|null $targets_exists
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Region newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Region newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Region query()

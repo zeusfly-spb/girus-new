@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * @property-read \App\Models\Service|null $service
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Tematics> $tematics
  * @property-read int|null $tematics_count
+ * @property-read bool|null $tematics_exists
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Category newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Category newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Category query()

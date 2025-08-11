@@ -22,6 +22,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Activity> $activities
  * @property-read int|null $activities_count
+ * @property-read bool|null $activities_exists
  * @property-read \App\Models\Offer|null $offer
  * @property-read \App\Models\Partcount|null $partcount
  * @property-read \App\Models\Partner|null $partner

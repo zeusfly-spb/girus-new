@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property array<array-key, mixed> $service_type Тип услуги
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Tour> $tours
  * @property-read int|null $tours_count
+ * @property-read bool|null $tours_exists
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Partcount newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Partcount newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Partcount query()

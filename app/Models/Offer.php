@@ -27,6 +27,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\OfferDate> $dates
  * @property-read int|null $dates_count
+ * @property-read bool|null $dates_exists
  * @property-read \App\Models\Hotel|null $hotel
  * @property-read \App\Models\Service|null $service
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Offer newModelQuery()
