@@ -91,10 +91,15 @@ class AuthController extends Controller
      *         )
      *     )
      * )
-     */
+    */
     public function details(): JsonResponse
     {
-        $user = User::find(Auth::id());
-        return response()->json(new UserResource($user));
+        $user = Auth::user();
+
+        if ($user) {
+            return response()->json(['user' => new UserResource($user)]);
+        }
+
+        return response()->json(['error' => 'Unauthenticated.'], 401);
     }
 }
