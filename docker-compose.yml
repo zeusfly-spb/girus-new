@@ -50,13 +50,43 @@ services:
   # Example additional project: opus-project for opus.zeusfly.ru
   # Duplicate this block for each new project, change names/paths/images as needed
   # Assume it's another Laravel instance; adjust if different
-  opus-project:
+  orthodox-project:
     build:
-      context: './path/to/opus/docker/8.4'  # Change to the path of the new project
-      dockerfile: Dockerfile
+      context: '../orthodox-front'  # Change to the path of the new project
+      dockerfile: Dockerfile.prod
       args:
-        WWWGROUP: '${WWWGROUP}'
-    image: 'sail-8.4/opus'  # Unique image name
+       HOST_UID: ${HOST_UID:-1000}
+       HOST_GID: ${HOST_GID:-1000}
+       WWWGROUP: '${WWWGROUP}'
+    image: 'sail-8.4/orthodox'  # Unique image name
+    networks:
+        app-network:
+            driver: bridge
+
+    services:
+        frontend:
+            build:
+                context: .
+                dockerfile: Dockerfile.dev
+                args:
+                    HOST_UID: ${HOST_UID:-1000}
+                    HOST_GID: ${HOST_GID:-1000}
+            container_name: frontend-dev
+            restart: unless-stopped
+            user: "${HOST_UID:-1000}:${HOST_GID:-1000}"
+            volumes:
+                - ./app:/${APP_DIR:-/app}
+                - /app/node_modules
+                - /app/.vite
+            environment:
+                - NODE_ENV=development
+                - CHOKIDAR_USEPOLLING=true
+                - WATCHPACK_POLLING=true
+            ports:
+                - "5173:5173"
+                - "24678:24678"
+            networks:
+                - app-network
     extra_hosts:
       - 'host.docker.internal:host-gateway'
     expose:
