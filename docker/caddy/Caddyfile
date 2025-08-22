@@ -1,0 +1,31 @@
+{
+	# опционально: локальный лог/уровень
+	# debug
+}
+
+{$DOMAIN} {
+	encode gzip zstd
+	tls {$ACME_EMAIL}  # Caddy сам получит/продлит сертификат
+
+	# HSTS и базовые заголовки (необязательно, но полезно)
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+	}
+
+	# если нужен редирект с www:
+	# redir https://{$DOMAIN}{uri} permanent
+
+	# проксируем внутрь контейнера Sail с вебом (обычно nginx Sail слушает 80)
+	reverse_proxy laravel.test:80 {
+		header_up X-Forwarded-Proto {scheme}
+		header_up X-Forwarded-For {remote_host}
+		header_up Host {host}
+	}
+}
+
+# Чтобы www тоже работал, добавь второй серверный блок:
+www.{$DOMAIN} {
+	redir https://{$DOMAIN}{uri} permanent
+}
